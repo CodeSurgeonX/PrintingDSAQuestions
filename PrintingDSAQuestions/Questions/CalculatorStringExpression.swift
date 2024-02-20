@@ -10,7 +10,7 @@ struct CalculatorStringExpression: Solution {
             for item in entitiesArray {
                 if allowedOperations.contains(item) {
                     if lastOperator != nil {
-                        if !((item == "/" || item == "*") && (lastOperator == "+" || lastOperator == "-")) { // Non BODMAS
+                        if !((item == "/" || item == "*") && (lastOperator == "+" || lastOperator == "-")) { // Non BODMAS case
                             while !operatorStack.isEmpty {
                                 guard let secondItem = digitStack.popLast(),
                                       let operation = operatorStack.popLast(),
@@ -21,8 +21,7 @@ struct CalculatorStringExpression: Solution {
                     }
                     lastOperator = item
                     operatorStack.append(item)
-                } else {
-                    // This is digit. We are ignoring illegal characters.
+                } else { // This is digit. We are ignoring illegal characters.
                     if let digit = Int(String(item)) {
                         digitStack.append(digit)
                     }
