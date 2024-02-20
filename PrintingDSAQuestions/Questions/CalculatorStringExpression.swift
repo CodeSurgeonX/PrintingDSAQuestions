@@ -51,10 +51,11 @@ struct CalculatorStringExpression: Solution {
                 fatalError("Invalid Operator Found")
             }
         }
-        print(calculate(expr: "3+4/2-1")) //4
-        print(calculate(expr: "4-5+6")) //5
-        print(calculate(expr: "4/2+6/2")) //5
-        print(calculate(expr: "3/3+4*6-9")) //16
-        print(calculate(expr: "9*5-4*5+9")) //34
+        
+//        print(calculate(expr: "3+4/2-1")) //4
+//        print(calculate(expr: "4-5+6")) //5
+//        print(calculate(expr: "4/2+6/2")) //5
+//        print(calculate(expr: "3/3+4*6-9")) //16
+//        print(calculate(expr: "9*5-4*5+9")) //34
     }
 }
