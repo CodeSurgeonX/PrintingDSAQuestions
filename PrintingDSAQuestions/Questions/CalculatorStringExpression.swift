@@ -9,69 +9,69 @@ import Foundation
 
 struct CalculatorStringExpression: Solution {
     func run() {
+        func calculate(expr: String) -> Int {
+            let allowedOperations: Set<Character> = ["+", "-", "*", "/"]
+            let entitiesArray = Array(expr)
+            var lastOperator: Character?
+            var operatorStack = [Character]()
+            var digitStack = [Int]()
+            
+            for item in entitiesArray {
+                if allowedOperations.contains(item) {
+                    if lastOperator != nil {
+                        if !((item == "/" || item == "*") && (lastOperator == "+" || lastOperator == "-")) { // Non BODMAS
+                            while !operatorStack.isEmpty {
+                                guard let secondItem = digitStack.popLast(),
+                                      let operation = operatorStack.popLast(),
+                                      let firstItem = digitStack.popLast()
+                                else {
+                                    fatalError("Invalid Expression")
+                                }
+                                digitStack.append(solve(first: firstItem, second: secondItem, operation: operation))
+                            }
+                        }
+                    }
+                    lastOperator = item
+                    operatorStack.append(item)
+                } else {
+                    // This is digit. We are ignoring illegal characters.
+                    if let digit = Int(String(item)) {
+                        digitStack.append(digit)
+                    }
+                }
+            }
+            
+            while !operatorStack.isEmpty {
+                guard let secondItem = digitStack.popLast(),
+                      let operation = operatorStack.popLast(),
+                      let firstItem = digitStack.popLast()
+                else {
+                    fatalError()
+                }
+                
+                digitStack.append(solve(first: firstItem, second: secondItem, operation: operation))
+            }
+            return digitStack.popLast()!
+        }
         
-        
-        
+        func solve(first: Int, second: Int, operation: Character) -> Int {
+            switch operation {
+            case "+":
+                return first + second
+            case "-":
+                return first - second
+            case "*":
+                return first * second
+            case "/":
+                return first / second
+            default:
+                fatalError("Invalid Operator Found")
+            }
+        }
+        print(calculate(expr: "3+4/2-1")) //4
+        print(calculate(expr: "4-5+6")) //5
+        print(calculate(expr: "4/2+6/2")) //5
+        print(calculate(expr: "3/3+4*6-9")) //16
+        print(calculate(expr: "9*5-4*5+9")) //34
     }
 }
-
-
-
-
-
-/*
- 
- enum CalculatorEntity {
-     case digit(Int)
-     case operation((Int, Int) -> Int)
-     
-     init?(character: Character) {
-         let allowedOperations: Set<Character> = ["+", "-", "*", "/"]
-         if allowedOperations.contains(character) {
-             switch character {
-             case "+":
-                 self = .operation(+)
-             case "-":
-                 self = .operation(+)
-             case "*":
-                 self = .operation(+)
-             case "/":
-                 self = .operation(+)
-             default:
-                 fatalError("Unknown State")
-             }
-         } else if let digit = Int(String(character)) {
-             self = .digit(digit)
-         } else {
-             return nil
-         }
-     }
- }
-
- func calculate(expression: String) {
-     let elementsArray = Array(expression).compactMap({ CalculatorEntity(character: $0)})
-     var stack = [CalculatorEntity]()
-     var lastValue: CalculatorEntity?
-     var lastOperation: CalculatorEntity?
-     
-     for element in elementsArray {
-         switch element {
-         case .digit( _ ):
-             lastValue = element
-             stack.append(element)
-         case .operation( let currentOperation ):
-             if let lastOperation {
-                 if currentOperation === + ||  currentOperation === - {
-                     
-                 }
-             } else {
-                 lastOperation = element
-                 stack.append(element)
-             }
-         }
-     }
- }
-}
- 
- 
- */
