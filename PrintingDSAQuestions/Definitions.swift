@@ -8,5 +8,6 @@
 import Foundation
 
 protocol Solution {
-    func run() 
+    func run()
+    init() // Never put func in front of init
 }

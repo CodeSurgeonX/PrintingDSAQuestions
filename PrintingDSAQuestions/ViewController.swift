@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         
-        RunList.runnableSolutions.forEach({ $0.run() })
+        RunList.runnableSolutions.forEach({ $0.init().run() })
     }
 
 

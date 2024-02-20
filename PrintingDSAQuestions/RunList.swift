@@ -8,14 +8,8 @@
 import Foundation
 
 
-class RunList {
-    
-    static var runnableSolutions: [Solution] = [
-        
+struct RunList {
+    static var runnableSolutions: [Solution.Type] = [
+        CalculatorStringExpression.self,
     ]
-    
-    
-    
-    
-    
 }
