@@ -1,12 +1,3 @@
-//
-//  CalculatorStringExpression.swift
-//  PrintingDSAQuestions
-//
-//  Created by Shashwat Kashyap on 20/02/24.
-//
-
-import Foundation
-
 struct CalculatorStringExpression: Solution {
     func run() {
         func calculate(expr: String) -> Int {
@@ -23,10 +14,7 @@ struct CalculatorStringExpression: Solution {
                             while !operatorStack.isEmpty {
                                 guard let secondItem = digitStack.popLast(),
                                       let operation = operatorStack.popLast(),
-                                      let firstItem = digitStack.popLast()
-                                else {
-                                    fatalError("Invalid Expression")
-                                }
+                                      let firstItem = digitStack.popLast() else { fatalError("Invalid Expression") }
                                 digitStack.append(solve(first: firstItem, second: secondItem, operation: operation))
                             }
                         }
@@ -44,11 +32,7 @@ struct CalculatorStringExpression: Solution {
             while !operatorStack.isEmpty {
                 guard let secondItem = digitStack.popLast(),
                       let operation = operatorStack.popLast(),
-                      let firstItem = digitStack.popLast()
-                else {
-                    fatalError()
-                }
-                
+                      let firstItem = digitStack.popLast() else { fatalError() }
                 digitStack.append(solve(first: firstItem, second: secondItem, operation: operation))
             }
             return digitStack.popLast()!
