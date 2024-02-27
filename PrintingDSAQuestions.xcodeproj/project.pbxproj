@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BC2DE2D12B84E4B4009BA2E6 /* SeachingInSorted2DMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2DE2D02B84E4B4009BA2E6 /* SeachingInSorted2DMatrix.swift */; };
+		BCE8F26F2B8E4CE300E2EE0F /* ProductOfArrayExceptSelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE8F26E2B8E4CE300E2EE0F /* ProductOfArrayExceptSelf.swift */; };
 		BCFE10292B849A220076E3A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFE10282B849A220076E3A4 /* AppDelegate.swift */; };
 		BCFE102B2B849A220076E3A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFE102A2B849A220076E3A4 /* SceneDelegate.swift */; };
 		BCFE102D2B849A220076E3A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFE102C2B849A220076E3A4 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		BC2DE2D02B84E4B4009BA2E6 /* SeachingInSorted2DMatrix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeachingInSorted2DMatrix.swift; sourceTree = "<group>"; };
+		BCE8F26E2B8E4CE300E2EE0F /* ProductOfArrayExceptSelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOfArrayExceptSelf.swift; sourceTree = "<group>"; };
 		BCFE10252B849A220076E3A4 /* PrintingDSAQuestions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrintingDSAQuestions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCFE10282B849A220076E3A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BCFE102A2B849A220076E3A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			children = (
 				BCFE103C2B849A450076E3A4 /* CalculatorStringExpression.swift */,
 				BC2DE2D02B84E4B4009BA2E6 /* SeachingInSorted2DMatrix.swift */,
+				BCE8F26E2B8E4CE300E2EE0F /* ProductOfArrayExceptSelf.swift */,
 			);
 			path = Questions;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCFE103D2B849A450076E3A4 /* CalculatorStringExpression.swift in Sources */,
+				BCE8F26F2B8E4CE300E2EE0F /* ProductOfArrayExceptSelf.swift in Sources */,
 				BCFE102D2B849A220076E3A4 /* ViewController.swift in Sources */,
 				BCFE10292B849A220076E3A4 /* AppDelegate.swift in Sources */,
 				BC2DE2D12B84E4B4009BA2E6 /* SeachingInSorted2DMatrix.swift in Sources */,

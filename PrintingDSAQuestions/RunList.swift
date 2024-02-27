@@ -12,5 +12,7 @@ struct RunList {
     static var runnableSolutions: [Solution.Type] = [
         CalculatorStringExpression.self,
         SeachingInSorted2DMatrixBinarySearchWay.self,
+        ProductOfArrayExceptSelf.self,
+        
     ]
 }
